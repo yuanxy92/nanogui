@@ -7,6 +7,9 @@ endif()
 
 project("NanoGUI")
 
+# C++ library postfix
+set (CMAKE_DEBUG_POSTFIX "_d")
+
 if (POLICY CMP0058)
   cmake_policy(SET CMP0058 NEW)
 endif()
@@ -391,7 +394,8 @@ endif()
 if (NANOGUI_INSTALL)
   install(TARGETS nanogui
           LIBRARY DESTINATION lib
-          ARCHIVE DESTINATION lib)
+          ARCHIVE DESTINATION lib
+          RUNTIME DESTINATION bin) 
 
   install(DIRECTORY include/nanogui DESTINATION include
           FILES_MATCHING PATTERN "*.h")

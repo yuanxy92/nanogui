@@ -71,7 +71,7 @@ int main(int /* argc */, char ** /* argv */) {
     glfwWindowHint(GLFW_RESIZABLE, GL_TRUE);
 
     // Create a GLFWwindow object
-    GLFWwindow* window = glfwCreateWindow(800, 800, "example3", nullptr, nullptr);
+    GLFWwindow* window = glfwCreateWindow(2560, 1440, "example3", glfwGetPrimaryMonitor(), NULL);
     if (window == nullptr) {
         std::cout << "Failed to create GLFW window" << std::endl;
         glfwTerminate();
@@ -127,7 +127,7 @@ int main(int /* argc */, char ** /* argv */) {
 
     screen->setVisible(true);
     screen->performLayout();
-    nanoguiWindow->center();
+    //nanoguiWindow->center();
 
     glfwSetCursorPosCallback(window,
             [](GLFWwindow *, double x, double y) {

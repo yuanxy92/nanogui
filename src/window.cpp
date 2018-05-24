@@ -33,9 +33,9 @@ Vector2i Window::preferredSize(NVGcontext *ctx) const {
     float bounds[4];
     nvgTextBounds(ctx, 0, 0, mTitle.c_str(), nullptr, bounds);
 
-    return result.cwiseMax(Vector2i(
-        bounds[2]-bounds[0] + 20, bounds[3]-bounds[1]
-    ));
+	Vector2i temp = Vector2i(bounds[2] - bounds[0] + 20, bounds[3] - bounds[1]);
+    //return result.cwiseMax(temp);
+	return Vector2i(std::max<int>(result(0), temp(0)), std::max<int>(result(1), temp(1)));
 }
 
 Widget *Window::buttonPanel() {
