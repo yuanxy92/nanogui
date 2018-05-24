@@ -71,7 +71,7 @@ int main(int /* argc */, char ** /* argv */) {
     glfwWindowHint(GLFW_RESIZABLE, GL_TRUE);
 
     // Create a GLFWwindow object
-    GLFWwindow* window = glfwCreateWindow(2560, 1440, "example3", glfwGetPrimaryMonitor(), NULL);
+    GLFWwindow* window = glfwCreateWindow(1280, 720, "example3", NULL, NULL);
     if (window == nullptr) {
         std::cout << "Failed to create GLFW window" << std::endl;
         glfwTerminate();
